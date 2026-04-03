@@ -6,5 +6,7 @@ Padrao de Projeto estrutural Bridge - Tipos de Beneficios e suas Categorias
 
 Diagrama de Classes:
 
-<img width="1114" height="538" alt="image" src="https://github.com/user-attachments/assets/5f89c978-4a12-4770-b08a-0489f60cc56b" />
+<img width="1120" height="387" alt="image" src="https://github.com/user-attachments/assets/3712cb94-1e09-4c1c-8ede-584619482a83" />
+
+
 
