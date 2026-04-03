@@ -11,27 +11,25 @@ class BeneficioPlanoSaudeTest {
 
     @BeforeEach
     void setUp() {
-        beneficioPlanoSaude = new BeneficioPlanoSaude(100.0f);
+        beneficioPlanoSaude = new BeneficioPlanoSaude();
+        beneficioPlanoSaude.setValorBase(100.0f);
     }
 
     @Test
     void deveRetornarValorPlanoSaudeBasico() {
-        Categoria categoria = new CategoriaBasico();
-        beneficioPlanoSaude.setCategoria(categoria);
+        beneficioPlanoSaude.setCategoria(CategoriaBasico.getInstance());
         assertEquals(50.0f, beneficioPlanoSaude.calcularCustoParaEmpresa());
     }
 
     @Test
     void deveRetornarValorPlanoSaudeIntermediario() {
-        Categoria categoria = new CategoriaIntermediario();
-        beneficioPlanoSaude.setCategoria(categoria);
+        beneficioPlanoSaude.setCategoria(CategoriaIntermediario.getInstance());
         assertEquals(75.0f, beneficioPlanoSaude.calcularCustoParaEmpresa());
     }
 
     @Test
     void deveRetornarValorPlanoSaudePremium() {
-        Categoria categoria = new CategoriaPremium();
-        beneficioPlanoSaude.setCategoria(categoria);
+        beneficioPlanoSaude.setCategoria(CategoriaPremium.getInstance());
         assertEquals(100.0f, beneficioPlanoSaude.calcularCustoParaEmpresa());
     }
 

@@ -5,9 +5,7 @@ public abstract class Beneficio {
     private Categoria categoria;
     private float valorBase;
 
-    public Beneficio(float valorBase) {
-        this.valorBase = valorBase;
-    }
+    public Beneficio() {}
 
     public Categoria getCategoria() {
         return categoria;

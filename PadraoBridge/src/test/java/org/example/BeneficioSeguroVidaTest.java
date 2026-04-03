@@ -1,6 +1,6 @@
 package org.example;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,29 +9,27 @@ class BeneficioSeguroVidaTest {
 
     static BeneficioSeguroVida beneficioSeguroVida;
 
-    @BeforeAll
-    static void setUp() {
-        beneficioSeguroVida = BeneficioSeguroVida.getInstance(100.0f);
+    @BeforeEach
+     void setUp() {
+        beneficioSeguroVida = new BeneficioSeguroVida();
+        beneficioSeguroVida.setValorBase(100.0f);
     }
 
     @Test
     void deveRetornarValorSeguroVidaBasico() {
-        Categoria categoria = new CategoriaBasico();
-        beneficioSeguroVida.setCategoria(categoria);
+        beneficioSeguroVida.setCategoria(CategoriaBasico.getInstance());
         assertEquals(55.0f, beneficioSeguroVida.calcularCustoParaEmpresa());
     }
 
     @Test
     void deveRetornarValorSeguroVidaIntermediario() {
-        Categoria categoria = new CategoriaIntermediario();
-        beneficioSeguroVida.setCategoria(categoria);
+        beneficioSeguroVida.setCategoria(CategoriaIntermediario.getInstance());
         assertEquals(82.5f, beneficioSeguroVida.calcularCustoParaEmpresa());
     }
 
     @Test
     void deveRetornarValorSeguroVidaPremium() {
-        Categoria categoria = new CategoriaPremium();
-        beneficioSeguroVida.setCategoria(categoria);
+        beneficioSeguroVida.setCategoria(CategoriaPremium.getInstance());
         assertEquals(110.0f, beneficioSeguroVida.calcularCustoParaEmpresa());
     }
 

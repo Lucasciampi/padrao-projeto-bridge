@@ -2,8 +2,8 @@ package org.example;
 
 public class BeneficioPlanoSaude extends Beneficio {
 
-    public BeneficioPlanoSaude(float valorBase) {
-        super(valorBase);
+    public BeneficioPlanoSaude() {
+        super();
     }
 
     @Override
